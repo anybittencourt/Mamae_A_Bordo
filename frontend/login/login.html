@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../login/login.css">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="container">
+        <div class="modal">
+            <h2>LOGIN</h2>
+            <div class="formlogin">
+                <label for="usuario">E-mail</label>
+                <div class="input-line"><input type="text" id="usuario"></div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <button id="visualizar" class="olho"><i id="olho" class="fa-solid fa-eye-slash fa-1xl" style="color: black;"></i></button>
+                </div>
+                <div class="input-line"><input type="password" id="senha"></div>
+
+
+                <a href="../cadastro/cadastro.html">Esqueceu a senha?</a>
+                <button class="entrar" onclick="login(event)">Entrar</button>
+                <p>Não possui cadastro? <a href="../cadastro/cadastro.html" id="cadastre-se">Cadastre-se</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../login/login.js"></script>
+    <script src="https://kit.fontawesome.com/a03d84a9ee.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

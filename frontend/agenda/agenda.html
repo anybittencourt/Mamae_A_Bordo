@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="../agenda/agenda.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../assets/Logo.png" alt="Logo Mãe e Bebê" />
+        </div>
+    </header>
+
+    <main>
+        <div class="topo">
+            <a href="../principal/principal.html">
+                <i class="fa-solid fa-angle-up fa-rotate-by fa-1xl"
+                    style="color: #9d9d9d; --fa-rotate-angle: 270deg;"></i>
+            </a>
+            <p id="titulo">Agenda</p>
+        </div>
+
+        <div class="calendar-main">
+            <div class="calendar-container">
+                <div class="month-nav">
+                    <i id="prevMonth" class="fa-solid fa-angle-up fa-rotate-by fa-1xl"
+                        style="color: #9d9d9d; --fa-rotate-angle: 270deg;"></i>
+                    <h2 id="monthYear"></h2>
+                    <i id="nextMonth" class="fa-solid fa-angle-up fa-rotate-by fa-1xl"
+                        style="color: #9d9d9d; --fa-rotate-angle: 450deg;"></i>
+                </div>
+                <table id="calendar">
+                    <thead>
+                        <tr>
+                            <th>DOM.</th>
+                            <th>SEG.</th>
+                            <th>TER.</th>
+                            <th>QUA.</th>
+                            <th>QUI.</th>
+                            <th>SEX.</th>
+                            <th>SÁB.</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="event-container">
+            <p id="no-event"><i class="fa-regular fa-calendar-days"></i> Não há eventos para hoje.</p>
+            <ul id="event-list"></ul>
+        </div>
+
+        <div class="centConsulta">
+            <button id="openForm">Adicionar Evento</button>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content" id="modal-form"> 
+                <span id="closeForm">&times;</span>
+                <h3>Adicionar Evento</h3>
+                <input type="text" id="event-description" placeholder="Consulta/Evento"> 
+                <input type="date" id="event-date"> <input type="time" id="event-time"> 
+                <button id="saveEvent">Salvar</button>
+                </div>
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="icones">
+
+            <a href="../principal/principal.html">
+                <div class="icones2">
+                    <i class="fa-solid fa-house fa-1xl" style="color: #9d9d9d;"></i>
+                    <P style="color: #9d9d9d;">início</P>
+                </div>
+            </a>
+
+            <a href="../postagem/postagem.html">
+                <div class="icones2">
+                    <i class="fa-solid fa-envelope fa-1xl" style="color: #9d9d9d;"></i>
+                    <p style="color: #9d9d9d;">Postagem</p>
+                </div>
+            </a>
+
+            <a href="../chat/online.html">
+                <div class="icones2">
+                    <i class="fa-solid fa-comments fa-1xl" style="color: #9d9d9d;"></i>
+                    <p style="color: #9d9d9d;">Chat</p>
+                </div>
+            </a>
+
+            <a href="../agenda/agenda.html">
+                <div class="icones2">
+                    <i class="fa-regular fa-calendar-days fa-1xl" style="color: #B19FF9;"></i>
+                    <p style="color: #B19FF9;">Agenda</p>
+                </div>
+            </a>
+
+            <a href="../perfil/perfil.html">
+                <div class="icones2">
+                    <i class="fa-solid fa-user fa-1xl" style="color: #9d9d9d;"></i>
+                    <p style="color: #9d9d9d;">perfil</p>
+                </div>
+            </a>
+
+        </div>
+    </footer>
+
+    <script src="../agenda/agenda.js"></script>
+    <script src="https://kit.fontawesome.com/a03d84a9ee.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

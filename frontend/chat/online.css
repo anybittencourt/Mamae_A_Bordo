@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* HEADER */
+header {
+  background: #B19FF9;
+  color: white;
+  text-align: center;
+  padding: 20px 10px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-container img {
+  width: 60px;
+}
+
+/* TOPO */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #E5E5E5;
+  padding: 10px;
+  position: relative;
+}
+
+#titulo {
+  font-size: 18px;
+  color: #9D9D9D;
+  margin-left: 32%;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #9d9d9d;
+  cursor: pointer;
+}
+
+.app-container {
+  display: flex;
+  height: calc(100vh - 200px);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* usuários online */
+.sidebar {
+  width: 150px;
+  background-color: #f4f4f9;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Quando sidebar for escondida */
+.app-container.sidebar-hidden .sidebar {
+  transform: translateX(-100%);
+  display: none;
+}
+
+.app-container.sidebar-hidden .chat-area {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#user-list {
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+#user-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  background-color: #ecebfb;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+#user-list li:hover,
+#user-list li.selected {
+  background-color: #d9d2fa;
+}
+
+/* CHAT */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6fc;
+}
+
+#chat-header {
+  padding: 8px;
+  background-color: #f6f6fc;
+  color: #3CD293;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+#messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  list-style-type: none;
+}
+
+#messages li {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* mensagens roxa */
+#messages li.sent {
+  background-color: #B19FF9;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+  word-wrap: break-word;
+  width: fit-content;
+  border-radius: 15px 15px 0 15px;
+}
+
+/* mensagens verde */
+#messages li.received {
+  background-color: #3CD293;
+  color: white;
+  align-self: flex-start;
+  word-wrap: break-word;
+  width: fit-content;
+  border-radius: 15px 15px 15px 0;
+}
+
+.form-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #f6f6fc;
+  border-top: 1px solid #ddd;
+}
+
+.form-post input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #fdfdfd;
+  outline: none;
+}
+
+.form-post button {
+  background-color: #B19FF9;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sent-message-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  max-width: 70%;
+}
+
+#messages li.sent {
+  margin-left: 0;
+  max-width: 100%;
+}
+
+/* opções */
+.message-options-menu {
+  position: relative;
+  margin-top: -8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.options-trigger {
+  cursor: pointer;
+  color: #888;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.options-dropdown {
+  display: none;
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+  width: 100px;
+}
+
+.options-dropdown.show {
+  display: block;
+}
+
+.options-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.options-dropdown .delete-btn {
+  color: #e74c3c;
+}
+
+/* mensagem excluida */
+#messages li.sent.deleted-message {
+  background-color: #B19FF9 !important;
+  color: white;
+  font-style: italic;
+  border: 1px solid #e0e0e0;
+}
+
+/* Modal de dição*/
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-body textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.modal-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.save-btn {
+  background-color: #B19FF9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #9a86e0;
+}
+
+/* ÍCONES */
+a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #9D9D9D;
+}
+
+.icones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2%;
+  border-top: 2px solid #E5E5E5;
+}
+
+.icones2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* FINAL */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

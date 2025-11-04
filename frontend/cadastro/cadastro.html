@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../cadastro/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="modal">
+            <h2>CADASTRO</h2>
+            <div class="formcadastro">
+                <label for="usuario">Nome de usuário</label>
+                <div class="input-line"><input type="text" id="usuario"></div>
+                <label for="email">E-mail</label>
+                <div class="input-line"><input type="email" id="email"></div>
+                <label for="nascimento">Data de nascimento</label>
+                <div class="input-line"><input type="date" id="nascimento"></div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <button id="visualizar" class="olho"><i id="olho" class="fa-solid fa-eye-slash fa-1xl" style="color: black;"></i></button>
+                </div>
+                <div class="input-line"><input type="password" id="senha"></div>
+                
+                <button class="cadastrar" onclick="cadastrar(event)">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../cadastro/cadastro.js"></script>
+    <script src="https://kit.fontawesome.com/a03d84a9ee.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
