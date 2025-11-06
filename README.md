@@ -1,4 +1,4 @@
-# README TÉCNICO — SISTEMA MAMÃE A BORDO
+# MAMÃE A BORDO
 
 ## 1. Introdução
 
@@ -65,7 +65,8 @@ MAMAE_A_BORDO/
 │       │   ├── amamentacao*.html
 │       │   ├── gestacao*.html
 │       │   ├── puerpério*.html
-│       │   └── recem_nascido*.html
+│       │   ├── recem_nascido*.html
+│       │   └── saude*.html
 │       │
 │       └── assets/                # Imagens, ícones e arquivos estáticos
 │
